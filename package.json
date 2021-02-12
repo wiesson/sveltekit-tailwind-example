@@ -16,6 +16,7 @@
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "next",
     "@sveltejs/snowpack-config": "next",
+    "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.4",
     "cssnano": "^4.1.10",
     "postcss": "^8.2.5",
