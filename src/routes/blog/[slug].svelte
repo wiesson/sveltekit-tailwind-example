@@ -1,0 +1,88 @@
+<script context="module">
+  export async function load({ fetch, page }) {
+    const { slug } = page.params;
+
+    const res = await fetch(`/blog/${slug}.json`);
+    const post = await res.json();
+
+    return {
+      props: {
+        post,
+      },
+    };
+  }
+</script>
+
+<script>
+  import { onMount, onDestroy, afterUpdate } from "svelte";
+
+  export let post = {};
+
+  onMount(() => {
+    console.log("mounted");
+  });
+
+  onDestroy(() => {
+    console.log("destroyed");
+  });
+
+  afterUpdate(() => {
+    console.log("afterUpdate");
+  });
+</script>
+
+<svelte:head>
+  <title>{post.title}</title>
+</svelte:head>
+
+<h1 class="font-bold pb-4 text-3xl">{post.title}</h1>
+
+<div class="content">
+  {@html post.html}
+</div>
+
+<style>
+  /*
+		By default, CSS is locally scoped to the component,
+		and any unused styles are dead-code-eliminated.
+		In this page, Svelte can't know which elements are
+		going to appear inside the {{{post.html}}} block,
+		so we have to use the :global(...) modifier to target
+		all elements inside .content
+	*/
+  .content :global(h2) {
+    padding-top: 2rem;
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+
+  .content :global(pre) {
+    background-color: #f9f9f9;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+    padding: 0.5em;
+    border-radius: 2px;
+    overflow-x: auto;
+  }
+
+  .content :global(pre) :global(code) {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .content :global(ul) {
+    line-height: 1.5;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    list-style: decimal;
+  }
+
+  .content :global(li) {
+    margin: 0 0 0.5em 0;
+  }
+
+  .content :global(p) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    word-break: break-all;
+  }
+</style>
