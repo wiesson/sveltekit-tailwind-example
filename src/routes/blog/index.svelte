@@ -22,7 +22,7 @@
   <ul class="space-y-4">
     {#each posts as post}
       <li class="text-md hover:underline">
-        <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
+        <a rel="prefetch" href="/blog/{post.slug}">{post.title}</a>
       </li>
     {/each}
   </ul>

@@ -13,21 +13,7 @@
 </script>
 
 <script>
-  import { onMount, onDestroy, afterUpdate } from "svelte";
-
   export let post = {};
-
-  onMount(() => {
-    console.log("mounted");
-  });
-
-  onDestroy(() => {
-    console.log("destroyed");
-  });
-
-  afterUpdate(() => {
-    console.log("afterUpdate");
-  });
 </script>
 
 <svelte:head>
