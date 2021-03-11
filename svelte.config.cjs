@@ -1,6 +1,6 @@
 module.exports = {
   kit: {
-    adapter: "@sveltejs/adapter-vercel",
+    adapter: "@sveltejs/adapter-static",
     target: "#svelte",
   },
 };
