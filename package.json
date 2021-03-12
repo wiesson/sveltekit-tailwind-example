@@ -7,10 +7,10 @@
     "start": "svelte-kit start"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "next",
+    "@sveltejs/adapter-node": "^1.0.0-next.6",
     "@sveltejs/adapter-static": "next",
-    "@sveltejs/adapter-vercel": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-vercel": "^1.0.0-next.4",
+    "@sveltejs/kit": "^1.0.0-next.45",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.0.0",
     "cross-fetch": "^3.0.0",
